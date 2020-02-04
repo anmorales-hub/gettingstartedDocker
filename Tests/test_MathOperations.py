@@ -1,25 +1,16 @@
 import unittest
 
-from Calculator.Calculator import Calculator
-
+from MathOperations.addition import Addition
+from MathOperations.subtraction import Subtraction
 
 
 class MyTestCase(unittest.TestCase):
 
-    def test_instantiate_calculator(self):
-        calculator = Calculator()
-        self.assertIsInstance(calculator, Calculator)
-
-
-    def test_calculator_addition(self):
-        calculator = Calculator()
-        result = calculator.Sum(1, 2)
-        self.assertEqual(3, result)
+    def test_MathOperations_Addition(self):
+        self.assertEqual(3, Addition.sum(1,2))
 
     def test_calculator_subtraction(self):
-        calculator = Calculator()
-        result = calculator.Difference(1, 2)
-        self.assertEqual(-1, result)
+        self.assertEqual(-1, Subtraction.difference(1,2))
 
     def test_calculator_multiply(self):
         calculator = Calculator()
