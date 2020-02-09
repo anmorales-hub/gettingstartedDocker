@@ -6,6 +6,7 @@ from MathOperations.multiplication import Multiplication
 from MathOperations.division import Division
 from MathOperations.exponent import Exponent
 from MathOperations.root import Root
+from MathOperations.log import Log
 
 
 class MyTestCase(unittest.TestCase):
@@ -31,6 +32,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_calculator_exponent(self):
         self.assertEqual(169, Exponent.power(13,2))
+
+    def test_calculator_logarithm(self):
+        self.assertEqual(0, Log.logarithm(10,1))
 
 if __name__ == '__main__':
     unittest.main()
