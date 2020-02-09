@@ -2,6 +2,7 @@ import unittest
 
 from MathOperations.addition import Addition
 from MathOperations.subtraction import Subtraction
+from MathOperations.multiplication import Multiplication
 
 
 class MyTestCase(unittest.TestCase):
@@ -9,17 +10,15 @@ class MyTestCase(unittest.TestCase):
     def test_MathOperations_Addition(self):
         self.assertEqual(3, Addition.sum(1,2))
 
-    def test_calculator_Subtraction(self):
+    def test_MathOperations_Subtraction(self):
         self.assertEqual(-1, Subtraction.difference(1,2))
 
     def test_MathOperations_sum_list(self):
         valuelist = [1,2,3]
         self.assertEqual(6, Addition.sum(valuelist))
 
-    def test_calculator_multiply(self):
-        calculator = Calculator()
-        result = calculator.multiply(2, 3)
-        self.assertEqual(6, result)
+    def test_MathOperations_Multiply(self):
+        self.assertEqual(6, Multiplication.product(2,3))
 
     def test_calculator_divide(self):
         calculator = Calculator()
