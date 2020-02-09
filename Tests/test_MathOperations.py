@@ -5,6 +5,7 @@ from MathOperations.subtraction import Subtraction
 from MathOperations.multiplication import Multiplication
 from MathOperations.division import Division
 from MathOperations.exponent import Exponent
+from MathOperations.root import Root
 
 
 class MyTestCase(unittest.TestCase):
@@ -25,10 +26,8 @@ class MyTestCase(unittest.TestCase):
     def test_calculator_divide(self):
         self.assertEqual(2, Division.quotient(6,3))
 
-    def test_calculator_square_root(self):
-        calculator = Calculator()
-        result = calculator.square_root(169)
-        self.assertEqual(13, result)
+    def test_calculator_root(self):
+        self.assertEqual(13, Root.root(169,2))
 
     def test_calculator_exponent(self):
         self.assertEqual(169, Exponent.power(13,2))
