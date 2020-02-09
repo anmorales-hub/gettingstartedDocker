@@ -1,5 +1,10 @@
 from MathOperations.addition import Addition
 from MathOperations.subtraction import Subtraction
+from MathOperations.multiplication import Multiplication
+from MathOperations.division import Division
+from MathOperations.exponent import Exponent
+from MathOperations.root import Root
+from MathOperations.log import Log
 
 class Calculator:
     Result = 0
@@ -7,22 +12,30 @@ class Calculator:
     def __init__(self):
         pass
 
-    def Sum(self, a, b):
+    def sum(self, a, b):
         self.Result = Addition.sum(a,b)
         return self.Result
 
-    def Difference(self, a, b):
+    def difference(self, a, b):
         self.Result = Subtraction.difference(a,b)
         return self.Result
 
-    def multiply(self, a, b):
-        return a * b
+    def product(self, a, b):
+        self.Result = Multiplication.product(a,b)
+        return self.Result
 
     def divide(self, a, b):
-        return a / b
+        self.Result = Division.quotient(a, b)
+        return self.Result
 
-    def square_root(self, a):
-        return a**(1/2)
+    def root(self, a, b):
+        self.Result = Root.root(a, b)
+        return self.Result
 
-    def square(self, a):
-        return a**2
+    def power(self, a, b):
+        self.Result = Exponent.power(a, b)
+        return self.Result
+
+    def log(self, a, b):
+        self.Result = Log.logarithm(a, b)
+        return self.Result
