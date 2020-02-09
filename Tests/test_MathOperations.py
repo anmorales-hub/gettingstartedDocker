@@ -3,6 +3,7 @@ import unittest
 from MathOperations.addition import Addition
 from MathOperations.subtraction import Subtraction
 from MathOperations.multiplication import Multiplication
+from MathOperations.division import Division
 
 
 class MyTestCase(unittest.TestCase):
@@ -21,9 +22,7 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(6, Multiplication.product(2,3))
 
     def test_calculator_divide(self):
-        calculator = Calculator()
-        result = calculator.divide(6, 2)
-        self.assertEqual(3, result)
+        self.assertEqual(2, Division.quotient(6,3))
 
     def test_calculator_square_root(self):
         calculator = Calculator()
