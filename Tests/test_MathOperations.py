@@ -4,6 +4,7 @@ from MathOperations.addition import Addition
 from MathOperations.subtraction import Subtraction
 from MathOperations.multiplication import Multiplication
 from MathOperations.division import Division
+from MathOperations.exponent import Exponent
 
 
 class MyTestCase(unittest.TestCase):
@@ -29,10 +30,8 @@ class MyTestCase(unittest.TestCase):
         result = calculator.square_root(169)
         self.assertEqual(13, result)
 
-    def test_calculator_square(self):
-        calculator = Calculator()
-        result = calculator.square(13)
-        self.assertEqual(169, result)
+    def test_calculator_exponent(self):
+        self.assertEqual(169, Exponent.power(13,2))
 
 if __name__ == '__main__':
     unittest.main()
