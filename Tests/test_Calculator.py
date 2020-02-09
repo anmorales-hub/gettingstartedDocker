@@ -37,24 +37,26 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(2, self.calculator.Result)
 
     def test_calculator_multiply(self):
-        calculator = Calculator()
-        result = calculator.multiply(2, 3)
+        result = self.calculator.Multiply(2, 3)
         self.assertEqual(6, result)
 
     def test_calculator_divide(self):
-        calculator = Calculator()
-        result = calculator.divide(6, 2)
+        result = self.calculator.Divide(6, 2)
         self.assertEqual(3, result)
 
-    def test_calculator_square_root(self):
-        calculator = Calculator()
-        result = calculator.square_root(169)
+    def test_calculator_root(self):
+        result = self.calculator.Root(169, 2)
         self.assertEqual(13, result)
 
-    def test_calculator_square(self):
-        calculator = Calculator()
-        result = calculator.square(13)
+    def test_calculator_power(self):
+        result = self.calculator.Power(13, 2)
         self.assertEqual(169, result)
 
+"""
+    def test_calculator_log(self):
+        calculator = Calculator()
+        result = calculator.Logarithm(1, 10)
+        self.assertEqual(0, result)
+"""
 if __name__ == '__main__':
     unittest.main()

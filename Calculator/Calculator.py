@@ -12,30 +12,30 @@ class Calculator:
     def __init__(self):
         pass
 
-    def sum(self, a, b):
+    def Sum(self, a, b):
         self.Result = Addition.sum(a,b)
         return self.Result
 
-    def difference(self, a, b):
+    def Difference(self, a, b):
         self.Result = Subtraction.difference(a,b)
         return self.Result
 
-    def product(self, a, b):
+    def Multiply(self, a, b):
         self.Result = Multiplication.product(a,b)
         return self.Result
 
-    def divide(self, a, b):
+    def Divide(self, a, b):
         self.Result = Division.quotient(a, b)
         return self.Result
 
-    def root(self, a, b):
+    def Root(self, a, b):
         self.Result = Root.root(a, b)
         return self.Result
 
-    def power(self, a, b):
+    def Power(self, a, b):
         self.Result = Exponent.power(a, b)
         return self.Result
 
-    def log(self, a, b):
+    def Logarithm(self, a, b):
         self.Result = Log.logarithm(a, b)
         return self.Result
