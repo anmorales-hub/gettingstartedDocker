@@ -52,11 +52,10 @@ class MyTestCase(unittest.TestCase):
         result = self.calculator.Power(13, 2)
         self.assertEqual(169, result)
 
-"""
+
     def test_calculator_log(self):
-        calculator = Calculator()
-        result = calculator.Logarithm(1, 10)
+        result = self.calculator.Logarithm(10, 1)
         self.assertEqual(0, result)
-"""
+
 if __name__ == '__main__':
     unittest.main()
