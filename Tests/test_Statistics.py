@@ -8,6 +8,9 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.statistics = Statistics()
 
+    def test_instantiate_calculator(self):
+        self.assertIsInstance(self.statistics, Statistics0)
+
     def test_mean(self):
         self.assertEqual(5,Mean.mean([5,5,5,5,5]))
 
