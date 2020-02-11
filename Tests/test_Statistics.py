@@ -9,7 +9,7 @@ class MyTestCase(unittest.TestCase):
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
-        self.assertIsInstance(self.statistics, Statistics0)
+        self.assertIsInstance(self.statistics, Statistics)
 
     def test_mean(self):
         self.assertEqual(5,Mean.mean([5,5,5,5,5]))
