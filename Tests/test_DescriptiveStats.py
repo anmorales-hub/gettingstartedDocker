@@ -4,7 +4,7 @@ from DescriptiveStats.Mean import Mean
 from DescriptiveStats.Median import Median
 from DescriptiveStats.Mode import Mode
 from DescriptiveStats.StdDeviation import StdDeviation
-
+from DescriptiveStats.Variance import Variance
 
 class MyTestCase(unittest.TestCase):
 
@@ -24,6 +24,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_StdDeviation(self):
         self.assertEqual(1.2909944487358056, StdDeviation.stdDeviation(self.test))
+
+    def test_Variance(self):
+        self.assertEqual(1.6666666666666667, Variance.variance(self.test))
 
 if __name__ == '__main__':
     unittest.main()
