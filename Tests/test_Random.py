@@ -28,6 +28,16 @@ class MyTestCase(unittest.TestCase):
             x = True
         self.assertEqual(True, x)
 
+    def test_listPickSeed(self):
+        test = [0, 1, 2, 3, 4]
+        result = ListPick.listPickSeed(3, test)
+        result2 = ListPick.listPickSeed(3, test)
+        x = None
+        if result in test and type(result) == int:
+            if result == result2:
+                x = True
+        self.assertEqual(True, x)
+
 
 if __name__ == '__main__':
     unittest.main()
