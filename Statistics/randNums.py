@@ -2,10 +2,6 @@ import random
 
 class RandGen:
 
-    def randNum_seed(self, seed, lower, upper):
-        random.seed(seed)
-        return self.randNum(lower, upper)
-
     def randList_seed(self, length, seed, lower, upper):
         list =[]
         while len(list) != length:
