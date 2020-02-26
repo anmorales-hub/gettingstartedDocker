@@ -6,6 +6,9 @@ from RNG.listPick import ListPick
 
 class MyTestCase(unittest.TestCase):
 
+    def setUp(self) -> None:
+        self.test = [0, 1, 2, 3, 4]
+
     def test_randNum(self):
         result = RandNum.randNum(0, 10)
         self.assertEqual(int, type(result))
@@ -21,37 +24,33 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(True, result1 == result2)
 
     def test_listPick(self):
-        test = [0,1,2,3,4]
-        result = ListPick.listPick(test)
+        result = ListPick.listPick(self.test)
         x = None
-        if result in test and type(result) == int:
+        if result in self.test and type(result) == int:
             x = True
         self.assertEqual(True, x)
 
     def test_listPickSeed(self):
-        test = [0, 1, 2, 3, 4]
-        result = ListPick.listPickSeed(3, test)
-        result2 = ListPick.listPickSeed(3, test)
+        result = ListPick.listPickSeed(3, self.test)
+        result2 = ListPick.listPickSeed(3, self.test)
         x = None
-        if result in test and type(result) == int:
+        if result in self.test and type(result) == int:
             if result == result2:
                 x = True
         self.assertEqual(True, x)
 
     def test_listPickList(self):
-        test = [0, 1, 2, 3, 4]
-        temp = ListPick.listPickList(2, test)
+        temp = ListPick.listPickList(2, self.test)
         x = None
         if len(temp) == 2:
             for item in temp:
-                if item in test and type(item) == int:
+                if item in self.test and type(item) == int:
                     x = True
         self.assertEqual(True, x)
 
     def test_listPickListSeed(self):
-        test =[0, 1, 2, 3, 4]
-        temp = ListPick.listPickListSeed(4, 2, test)
-        temp2 = ListPick.listPickListSeed(4, 2, test)
+        temp = ListPick.listPickListSeed(4, 2, self.test)
+        temp2 = ListPick.listPickListSeed(4, 2, self.test)
         x = None
         if temp == temp2:
             x = True
