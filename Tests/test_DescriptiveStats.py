@@ -3,6 +3,7 @@ import random
 from DescriptiveStats.Mean import Mean
 from DescriptiveStats.Median import Median
 from DescriptiveStats.Mode import Mode
+from DescriptiveStats.StdDeviation import StdDeviation
 
 
 class MyTestCase(unittest.TestCase):
@@ -19,6 +20,10 @@ class MyTestCase(unittest.TestCase):
 
     def test_Mode(self):
         self.assertEqual(2, Mode.mode(self.test))
+
+
+    def test_StdDeviation(self):
+        self.assertEqual(1.2909944487358056, StdDeviation.stdDeviation(self.test))
 
 if __name__ == '__main__':
     unittest.main()
