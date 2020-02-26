@@ -5,6 +5,8 @@ from DescriptiveStats.Median import Median
 from DescriptiveStats.Mode import Mode
 from DescriptiveStats.StdDeviation import StdDeviation
 from DescriptiveStats.Variance import Variance
+from DescriptiveStats.Quartiles import Quartiles
+
 
 class MyTestCase(unittest.TestCase):
 
@@ -27,6 +29,16 @@ class MyTestCase(unittest.TestCase):
 
     def test_Variance(self):
         self.assertEqual(1.6666666666666667, Variance.variance(self.test))
+
+    def test_Quartile1(self):
+        self.assertEqual(1.25, Quartiles.quartile1(self.test))
+
+    def test_Quartile2(self):
+        self.assertEqual(2, Quartiles.quartile2(self.test))
+
+    def test_Quartile3(self):
+        self.assertEqual(3.25,Quartiles.quartile3(self.test))
+
 
 if __name__ == '__main__':
     unittest.main()
