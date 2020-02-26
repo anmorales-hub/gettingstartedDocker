@@ -38,6 +38,16 @@ class MyTestCase(unittest.TestCase):
                 x = True
         self.assertEqual(True, x)
 
+    def test_listPickList(self):
+        test = [0, 1, 2, 3, 4]
+        temp = ListPick.listPickList(2, test)
+        x = None
+        if len(temp) == 2:
+            for item in temp:
+                if item in test and type(item) == int:
+                    x = True
+        self.assertEqual(True, x)
+
 
 if __name__ == '__main__':
     unittest.main()

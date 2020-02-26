@@ -10,3 +10,10 @@ class ListPick:
     def listPickSeed(seed, data):
         random.seed(seed)
         return ListPick.listPick(data)
+
+    @staticmethod
+    def listPickList(nums, data):
+        temp = []
+        while len(temp) < nums:
+            temp.append(ListPick.listPick(data))
+        return temp
