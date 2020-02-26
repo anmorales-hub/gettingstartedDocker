@@ -2,12 +2,6 @@ import random
 
 class RandGen:
 
-    def randList_seed(self, length, seed, lower, upper):
-        list =[]
-        while len(list) != length:
-            list.append(self.randNum_seed(seed, lower, upper))
-        return list
-
     def fromList(self, list):
         return random.choice(list)
 

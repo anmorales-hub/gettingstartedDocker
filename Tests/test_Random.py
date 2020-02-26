@@ -1,6 +1,8 @@
 import unittest
 from RNG.randNum import RandNum
 from RNG.randList import RandList
+from RNG.listPick import ListPick
+
 
 class MyTestCase(unittest.TestCase):
 
@@ -17,6 +19,14 @@ class MyTestCase(unittest.TestCase):
         result1 = RandList.randList(4, 5, 0, 10)
         result2 = RandList.randList(4, 5, 0, 10)
         self.assertEqual(True, result1 == result2)
+
+    def test_listPick(self):
+        test = [0,1,2,3,4]
+        result = ListPick.listPick(test)
+        x = None
+        if result in test and type(result) == int:
+            x = True
+        self.assertEqual(True, x)
 
 
 if __name__ == '__main__':
