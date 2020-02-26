@@ -17,3 +17,8 @@ class ListPick:
         while len(temp) < nums:
             temp.append(ListPick.listPick(data))
         return temp
+
+    @staticmethod
+    def listPickListSeed(seed, nums, data):
+        random.seed(seed)
+        return ListPick.listPickList(nums, data)
