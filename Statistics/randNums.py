@@ -2,9 +2,6 @@ import random
 
 class RandGen:
 
-    def randNum(self, lower, upper):
-        return random.randint(lower, upper)
-
     def randNum_seed(self, seed, lower, upper):
         random.seed(seed)
         return self.randNum(lower, upper)
@@ -32,7 +29,7 @@ class RandGen:
         random.seed(seed)
         self.fromList2(n,list)
 
-print(RandGen.randNum(0, 20))
+
 
 
 
