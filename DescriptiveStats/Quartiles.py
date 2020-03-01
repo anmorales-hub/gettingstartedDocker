@@ -3,15 +3,11 @@ import numpy
 class Quartiles:
 
     @staticmethod
-    def quartile1(data):
-        return numpy.percentile(data,[25])
+    def quartiles(data):
+        x = numpy.quantile(data,0.25)
+        y = numpy.quantile(data,0.5)
+        z = numpy.quantile(data,0.75)
 
-    @staticmethod
-    def quartile2(data):
-        return numpy.percentile(data, [50])
-
-    @staticmethod
-    def quartile3(data):
-        return numpy.percentile(data, [75])
+        return [x,y,z]
 
 
