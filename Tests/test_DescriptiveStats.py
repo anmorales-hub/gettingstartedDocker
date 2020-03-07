@@ -8,6 +8,7 @@ from DescriptiveStats.StdDeviation import StdDeviation
 from DescriptiveStats.Variance import Variance
 from DescriptiveStats.Quartiles import Quartiles
 from DescriptiveStats.Skewness import Skewness
+from DescriptiveStats.Covariance import Covariance
 
 
 class MyTestCase(unittest.TestCase):
@@ -15,7 +16,7 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         seed(3)
         self.test = randint(0, 20, 10)
-        self.testData2 = randint(0, 20, 10)
+        self.test2 = randint(0, 20, 10)
         pprint.pprint(self.test)
 
     def test_Mean(self):
@@ -35,10 +36,13 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(23.240000000000002, Variance.variance(self.test))
 
     def test_Quartile(self):
-        self.assertEqual([5.25, 9.5, 10.25], Quartiles.quartiles(self.test))
+        self.assertEqual([6.5, 9.5, 10.0], Quartiles.quartiles(self.test))
 
     def test_Skewness(self):
         self.assertEqual(0.2834111291185108, Skewness.skewness(self.test))
+
+    def test_Covariance(self):
+        self.assertEqual(0.7333333333333328,Covariance.covariance(self.test,self.test2))
 
 
 

@@ -1,6 +1,9 @@
+import random
 from RNG.listPick import ListPick
 
-class SimpRandSamp(ListPick):
+class SimpRandSamp:
 
-    def simpRandSamp(self, nums, data):
-        return self.listPickList(nums, data)
+    @staticmethod
+    def simpRandSamp(seed,nums,data):
+        random.seed(seed)
+        return ListPick.listPickListSeed(seed,nums,data)
