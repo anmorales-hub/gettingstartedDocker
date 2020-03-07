@@ -9,7 +9,7 @@ from DescriptiveStats.Variance import Variance
 from DescriptiveStats.Quartiles import Quartiles
 from DescriptiveStats.Skewness import Skewness
 from DescriptiveStats.Covariance import Covariance
-
+from DescriptiveStats.sampCorrelation import SampCorrelation
 
 class MyTestCase(unittest.TestCase):
 
@@ -43,6 +43,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_Covariance(self):
         self.assertEqual(0.7333333333333328,Covariance.covariance(self.test,self.test2))
+
+    def test_sampCorrelation(self):
+        self.assertEqual(0.09571405070239616,SampCorrelation.sampCorrelation(3,4,self.test,self.test2))
 
 
 
