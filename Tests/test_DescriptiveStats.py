@@ -10,6 +10,9 @@ from DescriptiveStats.Quartiles import Quartiles
 from DescriptiveStats.Skewness import Skewness
 from DescriptiveStats.Covariance import Covariance
 from DescriptiveStats.sampCorrelation import SampCorrelation
+from DescriptiveStats.popCorrelation import PopCorrelation
+from DescriptiveStats.z_score import Z_score
+
 
 class MyTestCase(unittest.TestCase):
 
@@ -27,7 +30,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_Mode(self):
         self.assertEqual(10, Mode.mode(self.test))
-
 
     def test_StdDeviation(self):
         self.assertEqual(4.8207883172775805, StdDeviation.stdDeviation(self.test))
@@ -47,6 +49,11 @@ class MyTestCase(unittest.TestCase):
     def test_sampCorrelation(self):
         self.assertEqual(0.09571405070239616,SampCorrelation.sampCorrelation(3,4,self.test,self.test2))
 
+    def test_popCorrelation(self):
+        self.assertEqual(0.02270432325894338,PopCorrelation.popCorrelation(self.test,self.test2))
+
+    def test_z_score(self):
+        self.assertEqual(-1.7839405993367978,Z_score.z_score(3, self.test))
 
 
 
