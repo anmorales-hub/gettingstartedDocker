@@ -3,24 +3,37 @@ from RNG.randNum import RandNum
 from RNG.randList import RandList
 from RNG.listPick import ListPick
 
-
 class MyTestCase(unittest.TestCase):
 
     def setUp(self) -> None:
         self.test = [0, 1, 2, 3, 4]
 
     def test_randNum(self):
-        result = RandNum.randNum(0, 10)
+        result = RandNum.randNum(0, 5)
         self.assertEqual(int, type(result))
 
     def test_randNumSeed(self):
-        result1 = RandNum.randNumSeed(4, 0, 10)
-        result2 = RandNum.randNumSeed(4, 0, 10)
+        result1 = RandNum.randNumSeed(5, 0, 20)
+        result2 = RandNum.randNumSeed(5, 0, 20)
+        self.assertEqual(True, result1 == result2)
+
+    def test_randFloat(self):
+        result = RandNum.randFloat(0, 10)
+        self.assertEqual(float, type(result))
+
+    def test_randFloatSeed(self):
+        result1 = RandNum.randFloatSeed(5, 0, 20)
+        result2 = RandNum.randFloatSeed(5, 0, 20)
         self.assertEqual(True, result1 == result2)
 
     def test_randNumList(self):
-        result1 = RandList.randList(4, 5, 0, 10)
-        result2 = RandList.randList(4, 5, 0, 10)
+        result1 = RandList.randList(1, 5, 0, 5)
+        result2 = RandList.randList(1, 5, 0, 5)
+        self.assertEqual(True, result1 == result2)
+
+    def test_randFloatList(self):
+        result1 = RandList.randList(1, 5, 0, 5)
+        result2 = RandList.randList(1, 5, 0, 5)
         self.assertEqual(True, result1 == result2)
 
     def test_listPick(self):
@@ -49,13 +62,12 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(True, x)
 
     def test_listPickListSeed(self):
-        temp = ListPick.listPickListSeed(4, 2, self.test)
-        temp2 = ListPick.listPickListSeed(4, 2, self.test)
+        temp = ListPick.listPickListSeed(5, 2, self.test)
+        temp2 = ListPick.listPickListSeed(5, 2, self.test)
         x = None
         if temp == temp2:
             x = True
         self.assertEqual(True, x)
-
 
 
 if __name__ == '__main__':

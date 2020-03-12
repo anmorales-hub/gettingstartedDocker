@@ -11,3 +11,11 @@ class RandNum:
         random.seed(seed)
         return RandNum.randNum(lower,upper)
 
+    @staticmethod
+    def randFloat(lower,upper):
+        return random.uniform(lower,upper)
+
+    @staticmethod
+    def randFloatSeed(seed,lower,upper):
+        random.seed(seed)
+        return RandNum.randFloat(lower,upper)
