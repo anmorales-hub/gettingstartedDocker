@@ -1,6 +1,7 @@
 import unittest
 from PopulationSampling.simpRandSamp import SimpRandSamp
 from PopulationSampling.systematicSamp import SystematicSamp
+from PopulationSampling.marginOfError import MarginOfError
 
 class MyTestCase(unittest.TestCase):
 
@@ -21,6 +22,12 @@ class MyTestCase(unittest.TestCase):
     def test_systematicSamp(self):
         result = SystematicSamp.systematicSamp(3,3,self.test)
         self.assertEqual([2,5,5], result)
+
+    def test_marginOfError(self):
+        result = MarginOfError.marginOfError(2, self.test)
+        self.assertEqual(result, -2.5)
+
+
 
 if __name__ == '__main__':
     unittest.main()
