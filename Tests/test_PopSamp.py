@@ -2,6 +2,7 @@ import unittest
 from PopulationSampling.simpRandSamp import SimpRandSamp
 from PopulationSampling.systematicSamp import SystematicSamp
 from PopulationSampling.marginOfError import MarginOfError
+from PopulationSampling.cochran import Cochran
 
 class MyTestCase(unittest.TestCase):
 
@@ -26,6 +27,10 @@ class MyTestCase(unittest.TestCase):
     def test_marginOfError(self):
         result = MarginOfError.marginOfError(2, self.test)
         self.assertEqual(result, -2.5)
+
+    def test_cochran(self):
+        result = Cochran.cochran(self.test, 1, 3)
+        self.assertEqual(result, 0.08571428571428572)
 
 
 
