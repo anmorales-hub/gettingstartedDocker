@@ -12,6 +12,8 @@ from DescriptiveStats.Covariance import Covariance
 from DescriptiveStats.sampCorrelation import SampCorrelation
 from DescriptiveStats.popCorrelation import PopCorrelation
 from DescriptiveStats.z_score import Z_score
+from DescriptiveStats.popProportion import PopProportion
+
 
 
 class MyTestCase(unittest.TestCase):
@@ -54,6 +56,9 @@ class MyTestCase(unittest.TestCase):
 
     def test_z_score(self):
         self.assertEqual(-1.7839405993367978,Z_score.z_score(3, self.test))
+
+    def test_popProportion(self):
+        self.assertEqual(0.5, PopProportion.popProportion(0,5,self.test))
 
 
 
