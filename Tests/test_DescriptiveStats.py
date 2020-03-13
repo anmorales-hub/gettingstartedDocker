@@ -13,6 +13,7 @@ from DescriptiveStats.sampCorrelation import SampCorrelation
 from DescriptiveStats.popCorrelation import PopCorrelation
 from DescriptiveStats.z_score import Z_score
 from DescriptiveStats.popProportion import PopProportion
+from DescriptiveStats.meanDeviation import MeanDeviation
 
 
 
@@ -60,6 +61,8 @@ class MyTestCase(unittest.TestCase):
     def test_popProportion(self):
         self.assertEqual(0.5, PopProportion.popProportion(0,5,self.test))
 
+    def test_meanDeviation(self):
+        self.assertEqual(3.4800000000000004 , MeanDeviation.meanDeviation(self.test))
 
 
 if __name__ == '__main__':
