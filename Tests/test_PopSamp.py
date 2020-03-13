@@ -3,6 +3,7 @@ from PopulationSampling.simpRandSamp import SimpRandSamp
 from PopulationSampling.systematicSamp import SystematicSamp
 from PopulationSampling.marginOfError import MarginOfError
 from PopulationSampling.cochran import Cochran
+from PopulationSampling.sampSizeConf import SampSizeConf
 
 class MyTestCase(unittest.TestCase):
 
@@ -31,6 +32,14 @@ class MyTestCase(unittest.TestCase):
     def test_cochran(self):
         result = Cochran.cochran(self.test, 1, 3)
         self.assertEqual(result, 0.08571428571428572)
+
+    def test_unknownStdDev(self):
+        result = SampSizeConf.unknownPopStdDev(1, self.test, .50)
+        self.assertEqual(0.08571428571428573, result)
+
+    def test_knownStdDev(self):
+        result = SampSizeConf.knownPopStdDev(1, self.test)
+        self.assertEqual(result, 1)
 
 
 
